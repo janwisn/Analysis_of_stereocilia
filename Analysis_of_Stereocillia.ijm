@@ -112,7 +112,7 @@ run("Rotate... ", "angle=[rot] grid=1 interpolation=Bicubic");		}
 
 close("R");
 close("C1-x");
-close("C2-x");		}		}   **
+close("C2-x");		}		}  
 run("Images to Stack", "use");		
 saveAs("Tif", res + "Stack");
 
