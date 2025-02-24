@@ -1,18 +1,18 @@
 Dialog.create(" ");
-Dialog.addMessage("Assembling and analysing average image of multiple stereocillia", 30, "Red");
+Dialog.addMessage("Assembling and analysing average image of multiple stereocilia", 30, "Red");
 Dialog.addMessage("                                      Jan Wisniewski", 30, "Blue");
 Dialog.addMessage("      Experimental Immunology Branch, NCI, NIH, Bethesda, MD, USA", 24, "Blue");
 Dialog.show();
 
 
 Dialog.create("");
-Dialog.addRadioButtonGroup("Choose:", newArray("Averaging cillia and Montage", "Extracting brightness profiles"), 2, 1, "Averaging cillia and Montage");
+Dialog.addRadioButtonGroup("Choose:", newArray("Averaging cilia and Montage", "Extracting brightness profiles"), 2, 1, "Averaging cilia and Montage");
 Dialog.show();
 act=Dialog.getRadioButton();
 
 res=getDirectory("Choose/create folder to store results and temporary files/subfolders");
 
-if(act=="Averaging cillia and Montage") {
+if(act=="Averaging cilia and Montage") {
 inpt=getDirectory("Select folder containing STEDYCON images converted to multichannel tiff");
 lst=getFileList(inpt);
 for (k = 0; k < lst.length; k++) {open(inpt + lst[k]);
@@ -37,7 +37,7 @@ run("Enhance Contrast", "saturated=0.35");
 run("Tile");
 
 Dialog.createNonBlocking("");
-Dialog.addNumber("How many well oriented flat cillia are visible in this image?", 0);
+Dialog.addNumber("How many well oriented flat cilia are visible in this image?", 0);
 Dialog.show();
 chk=Dialog.getNumber();
 
