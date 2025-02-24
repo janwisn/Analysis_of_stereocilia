@@ -87,10 +87,10 @@ setTool("point");
 for (j = 1; j < chk+1; j++) {selectWindow("R");
 //selectWindow("C2-x");
 if(j>1) {makeLine(xA, yA, xB, yB);		}
-waitForUser("For cillium " + j + " of " + chk + " select 1st reference point - cillium apex");
+waitForUser("For cilium " + j + " of " + chk + " select 1st reference point - cilium apex");
 xA=getValue("X");
 yA=getValue("Y");
-waitForUser("Select 2nd reference point - center of cillium free end\nor anywhere on cillium axis");
+waitForUser("Select 2nd reference point - center of cilium free end\nor anywhere on cilium axis");
 xB=getValue("X");
 yB=getValue("Y");
 ang=180*atan2((yB-yA), (xB-xA))/PI;
@@ -132,7 +132,7 @@ run("Bandpass Filter...", "filter_large=625 filter_small=15 suppress=None tolera
 run("Unsharp Mask...", "radius=15 mask=0.60");
 resetMinAndMax;
 run("Enhance Contrast", "saturated=0.35");
-rename("cillium");
+rename("cilium");
 close("Sub_1");
 
 selectImage("Sub_2");
@@ -148,7 +148,7 @@ run("Enhance Contrast", "saturated=0.35");
 rename("funnel");
 close("Sub_2");
 
-run("Merge Channels...", "c1=funnel c2=cillium create");
+run("Merge Channels...", "c1=funnel c2=cilium create");
 run("Rotate 90 Degrees Left");
 saveAs("Tif", res + "Composite");
 run("Duplicate...", "duplicate");
@@ -162,7 +162,7 @@ waitForUser("Reorder slices if needed");
 run("Make Montage...", "columns=3 rows=1 scale=1 border=4");
 run("Set Scale...", "distance=1 known=5 unit=nm");
 run("Scale Bar...", "width=500 height=200 font=20 horizontal bold serif");
-saveAs("Tif", res + "Cillium_Montage");
+saveAs("Tif", res + "Cilium_Montage");
 imlst=getList("image.titles");
 for (i = 0; i < imlst.length; i++) {close(imlst[i]);	}		}
 
